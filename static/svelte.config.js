@@ -1,13 +1,13 @@
 const URL_PREFIX = "Bagel-V2"; // <-- Set this to the repository name if you're hosting on GitHub Pages (unless it's your homepage site), as all the URLs will need to be prefixed with it. If you don't want a prefix, set it to an empty string
 
 
-import adapter from "@sveltejs/adapter-static";
+import { adapter, standardGetLast } from "sveltekit-adapter-versioned-worker";
 
-const dev = process.env.NODE_ENV != "production";
-const disableBaseURL = process.env.DISABLE_BASE_URL == null? false : process.env.DISABLE_BASE_URL == "true";
+const dev = process.env.NODE_ENV !== "production";
+const isTestBuild = process.env.IS_TEST_BUILD === "true";
 const baseURL = (
 	dev
-	|| disableBaseURL
+	|| isTestBuild
 	|| URL_PREFIX == ""
 )? "" : `/${URL_PREFIX}`;
 
@@ -27,7 +27,13 @@ const config = {
 			$vid: "src/lib/vids"
 		},
 
-		adapter: adapter()
+		adapter: adapter({
+			isElevatedPatchUpdate: 0,
+			isMajorUpdate: 0,
+			isCriticalUpdate: 0,
+
+			lastInfo: standardGetLast("https://hedgehog125.github.io/Bagel-V2/versionedWorker.json", isTestBuild)
+		})
 	}
 };
 

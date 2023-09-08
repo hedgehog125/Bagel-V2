@@ -1,5 +1,5 @@
 <script>
-	import { RegisterWorker } from "sveltekit-plugin-versioned-worker/components";
+	import { ServiceWorker } from "sveltekit-adapter-versioned-worker/svelte";
 </script>
 
 <style>
@@ -14,5 +14,5 @@
 	}
 </style>
 
-<RegisterWorker></RegisterWorker>
+<ServiceWorker></ServiceWorker>
 <slot></slot>

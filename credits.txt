@@ -17,7 +17,7 @@ html-minifier (https://www.npmjs.com/package/html-minifier)
 Vite: (https://www.npmjs.com/package/vite)
 cross-env (https://www.npmjs.com/package/cross-env)
 http-server: (https://www.npmjs.com/package/http-server)
-Versioned-Worker: (https://www.npmjs.com/package/sveltekit-plugin-versioned-worker)
+Versioned-Worker: (https://www.npmjs.com/package/sveltekit-adapter-versioned-worker)
 
 === Images ===
 == Key ==
