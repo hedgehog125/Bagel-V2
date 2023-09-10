@@ -1,6 +1,10 @@
 # Bagel-V2
 **Update**: Since I released an [improved version of the service worker plugin this originally used](https://github.com/hedgehog125/SvelteKit-Adapter-Versioned-Worker), this PWA was adapted to use it from the older version.
 
+**Note**: almost all of the relevant code is in the "static" folder. I plan to rename it to something less confusing when I revamp my SvelteKit template.
+
+---
+
 I made a sequel to the original Bagel PWA to see how quickly I could make it.
 
 This uses SvelteKit and my plugin [SvelteKit-Plugin-Versioned-Worker](https://github.com/hedgehog125/SvelteKit-Plugin-Versioned-Worker).
